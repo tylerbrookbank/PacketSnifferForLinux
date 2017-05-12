@@ -182,7 +182,7 @@ void packet_decode(u_char **buffer, int *size)
 
 void tcp_decode(u_char **buffer, int *size)
 {
-	int dataoffest;
+	int dataoffset;
 	/*20 bytes*/
 	if(*size<20)
 	{
@@ -276,7 +276,7 @@ void print_dump(u_char *buffer, int size, char *proto, int layer)
         printf("Dest Mac: %02x %02x %02x %02x %02x %02x\tSorc Mac: %02x %02x %02x %02x %02x %02x\n",
 		datalink.destMac[0],datalink.destMac[1],datalink.destMac[2],datalink.destMac[3],datalink.destMac[4],datalink.destMac[5],
 		datalink.srcMac[0],datalink.srcMac[1],datalink.srcMac[2],datalink.srcMac[3],datalink.srcMac[4],datalink.srcMac[5]);
-	printf("Dest Ip: %02x %02x %02x %02x\t\tSorc IP: %02x %02x %02x %02x\n",
+	printf("Dest Ip: %d.%d.%d.%d\t\tSorc IP: %d.%d.%d.%d\n",
 		iphead.destIp[0],iphead.destIp[1],iphead.destIp[2],iphead.destIp[3],
 		iphead.srcIp[0],iphead.srcIp[1],iphead.srcIp[2],iphead.srcIp[3]);
 	if(layer > 2)
